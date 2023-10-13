@@ -44,7 +44,7 @@ def load_data(LocFile, EdgeFile):
 
 def format_output(path, locations, edges, total_preference, total_time):
     output_lines = []
-    output_lines.append(f"solutionLabel  {startLoc}  {total_preference}  {total_time}")
+    # output_lines.append(f"solutionLabel  {startLoc}  {}  {total_time}")
     total_distance = 0
 
     for i, (locationA, edge_label, locationB) in enumerate(path):
@@ -64,19 +64,13 @@ def format_output(path, locations, edges, total_preference, total_time):
 
 def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
     locations, edges = load_data(LocFile, EdgeFile)
-    Frontier = [(0, startLoc, 0, [], 0)]
+    Frontier = [(-0, startLoc, 0, [], 0)]  # Negative sign for max heap
     visited = set()
     all_solutions = []
-    best_solutions = {}
 
     while Frontier:
         total_preference, current_loc, total_time, path, edge_time = heapq.heappop(Frontier)
         total_preference = -total_preference
-
-        if current_loc in best_solutions and best_solutions[current_loc] >= total_preference:
-            continue
-
-        best_solutions[current_loc] = total_preference
 
         if current_loc == startLoc and path:
             # Save this to the output list
@@ -88,6 +82,7 @@ def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
             cont = input("Continue? (yes/no): ")
             if cont.lower() == 'no':
                 break
+            visited = set()
             continue
         
         visited.add(current_loc)
@@ -114,10 +109,15 @@ def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
 
     for solution in all_solutions:
         formatted_output = format_output(solution['path'], locations, edges, solution['total_preference'], solution['total_time'])
+        print(f"solutionLabel  {startLoc}  {maxTime}  {x_mph}")
+        print()
         for line in formatted_output:
             print(line)
         with open(resultFile, 'a') as f:
+            f.write(f"solutionLabel  {startLoc}  {maxTime}  {x_mph}")
+            f.write('\n')
             f.write('\n'.join(formatted_output))
+            f.write('\n')
             f.write('\n')
         print()
 

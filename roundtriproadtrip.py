@@ -4,28 +4,35 @@ import math
 import csv
 import random
 
+# Uniformly returns location preference between a and b
 def location_preference_assignments(a, b):
     return random.uniform(a, b)
 
+# Uniformly returns edge preference between a and b
 def edge_preference_assignments(a, b):
     return random.uniform(a, b)
 
+# Returns total preference of a roadtrip
 def total_preference(roadtrip, locations, edges):
     loc_pref = sum(locations[loc]['preference'] for loc in roadtrip['locations'])
     edge_pref = sum(edges[edge]['preference'] for edge in roadtrip['edges'])
     return loc_pref + edge_pref
 
+# Returns total time at a location
 def time_at_location(vloc):
     return vloc * 10
 
+# Adds time on an edge
 def add_time_on_edge(vedge):
     return time_at_location(vedge)
 
+# Returns total time of a roadtrip
 def time_estimate(roadtrip, x, edges):
     edge_time = sum((edges[edge]['distance'] / x) + add_time_on_edge(edges[edge]['preference']) for edge in roadtrip['edges'])
     loc_time = sum(time_at_location(edges[edge]['preference']) for edge in roadtrip['edges'])
     return edge_time + loc_time
 
+# Loads data from location and edge files
 def load_data(LocFile, EdgeFile):
     locations, edges = {}, {}
     with open(LocFile, 'r') as locs:
@@ -42,6 +49,7 @@ def load_data(LocFile, EdgeFile):
                 edges[edgeLabel] = {'locationA': label_A, 'locationB': label_B, 'distance': float(actual_distance), 'preference': pref}
     return locations, edges
 
+# Formats output
 def format_output(path, locations, edges, total_preference, total_time):
     output_lines = []
     # output_lines.append(f"solutionLabel  {startLoc}  {}  {total_time}")
@@ -62,6 +70,7 @@ def format_output(path, locations, edges, total_preference, total_time):
     output_lines.append(f"{startLoc} {total_preference} {total_distance} {total_time}")
     return output_lines
 
+# Uses heap to find all possible roadtrips that start and end at the same location within a given time at a given speed
 def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
     locations, edges = load_data(LocFile, EdgeFile)
     Frontier = [(-0, startLoc, 0, [], 0)]  # Negative sign for max heap

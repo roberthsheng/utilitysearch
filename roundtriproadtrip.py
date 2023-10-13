@@ -110,7 +110,6 @@ def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
     for solution in all_solutions:
         formatted_output = format_output(solution['path'], locations, edges, solution['total_preference'], solution['total_time'])
         print(f"solutionLabel  {startLoc}  {maxTime}  {x_mph}")
-        print()
         for line in formatted_output:
             print(line)
         with open(resultFile, 'a') as f:

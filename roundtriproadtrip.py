@@ -16,7 +16,7 @@ def total_preference(roadtrip, locations, edges):
     return loc_pref + edge_pref
 
 def time_at_location(vloc):
-    return vloc * 10  # Example function, can be modified
+    return vloc * 10
 
 def add_time_on_edge(vedge):
     return time_at_location(vedge)
@@ -42,37 +42,61 @@ def load_data(LocFile, EdgeFile):
                 edges[edgeLabel] = {'locationA': label_A, 'locationB': label_B, 'distance': float(actual_distance), 'preference': pref}
     return locations, edges
 
-def write_to_file(output, filename):
-    with open(filename, 'w') as f:
-        for line in output:
-            f.write(line + "\n")
+def format_output(path, locations, edges, total_preference, total_time):
+    output_lines = []
+    output_lines.append(f"solutionLabel  {startLoc}  {total_preference}  {total_time}")
+    total_distance = 0
+
+    for i, (locationA, edge_label, locationB) in enumerate(path):
+        edge = edges[edge_label]
+        edge_distance = edge['distance']
+        edge_preference = edge['preference']
+        total_distance += edge_distance
+        edge_time = edge_distance / x_mph  # Assuming x_mph is accessible here
+        loc_preference = locations[locationB]['preference']
+        loc_time = time_at_location(locations[locationB]['preference'])
+        
+        line = f"{i + 1}. {locationA} {locationB} {edge_label} {edge_preference} {edge_time} {loc_preference} {loc_time}"
+        output_lines.append(line)
+    
+    output_lines.append(f"{startLoc} {total_preference} {total_distance} {total_time}")
+    return output_lines
 
 def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
     locations, edges = load_data(LocFile, EdgeFile)
     Frontier = [(0, startLoc, 0, [], 0)]
     visited = set()
-    output = []
+    all_solutions = []
+    best_solutions = {}
 
     while Frontier:
         total_preference, current_loc, total_time, path, edge_time = heapq.heappop(Frontier)
-        total_preference = -total_preference  # Since we are maximizing preference, but heapq is a min-heap
+        total_preference = -total_preference
+
+        if current_loc in best_solutions and best_solutions[current_loc] >= total_preference:
+            continue
+
+        best_solutions[current_loc] = total_preference
 
         if current_loc == startLoc and path:
             # Save this to the output list
-            output.append(f"Path: {path}\nTotal Preference: {total_preference}\nTotal Time: {total_time}\n")
-
+            all_solutions.append({
+                'path': path,
+                'total_preference': total_preference,
+                'total_time': total_time
+            })
             cont = input("Continue? (yes/no): ")
             if cont.lower() == 'no':
                 break
             continue
-
+        
         visited.add(current_loc)
 
         for edge_label, edge_info in edges.items():
             if current_loc in {edge_info['locationA'], edge_info['locationB']}:
                 next_loc = edge_info['locationB'] if current_loc == edge_info['locationA'] else edge_info['locationA']
 
-                if next_loc in visited:
+                if next_loc in visited and next_loc != startLoc:
                     continue
 
                 new_total_time = total_time + (edge_info['distance'] / x_mph) + add_time_on_edge(edge_info['preference'])
@@ -81,17 +105,29 @@ def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
                 if new_total_time > maxTime:
                     continue
 
-                new_total_preference = total_preference + edge_info['preference'] + locations[next_loc]['preference']
-                new_path = path + [edge_label]
+                current_to_next = True if current_loc == edge_info['locationA'] else False
+                next_loc_preference = locations[next_loc]['preference'] if current_to_next else locations[current_loc]['preference']
+                new_total_preference = total_preference + edge_info['preference'] + next_loc_preference
+
+                new_path = path + [(current_loc, edge_label, next_loc)]
                 heapq.heappush(Frontier, (-new_total_preference, next_loc, new_total_time, new_path, new_edge_time))
 
-        visited.remove(current_loc)  # Remove from visited set to allow revisiting locations
+    for solution in all_solutions:
+        formatted_output = format_output(solution['path'], locations, edges, solution['total_preference'], solution['total_time'])
+        for line in formatted_output:
+            print(line)
+        with open(resultFile, 'a') as f:
+            f.write('\n'.join(formatted_output))
+            f.write('\n')
+        print()
 
-    write_to_file(output, resultFile)
 
 # Test
 if __name__ == "__main__":
     startLoc = input("Enter starting location: ")
+    locationfile = input("Enter location file: ")
+    edgefile = input("Enter edge file: ")
     maxTime = float(input("Enter maximum time: "))
     x_mph = float(input("Enter speed: "))
-    RoundTripRoadTrip(startLoc, 'locations.csv', 'edges.csv', maxTime, x_mph, 'results/{startLoc}_{maxTime}_{x_mph}.txt'.format(startLoc=startLoc, maxTime=maxTime, x_mph=x_mph))
+    resultsfile = input("Enter results file: ")
+    RoundTripRoadTrip(startLoc, locationfile, edgefile, maxTime, x_mph, resultsfile)

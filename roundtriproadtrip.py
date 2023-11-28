@@ -1,6 +1,4 @@
 import heapq
-import time
-import math
 import csv
 import random
 

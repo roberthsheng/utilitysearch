@@ -3,8 +3,12 @@ import csv
 import random
 
 # Uniformly returns location preference between a and b
-def location_preference_assignments(a, b):
-    return random.uniform(a, b)
+def location_preference_assignments(a, b, location_themes, user_preferred_themes):
+    base_pref = random.uniform(a, b)
+    for theme in user_preferred_themes:
+        if theme in location_themes:
+            return base_pref * 1.5  # Increase preference for matching themes
+    return base_pref
 
 # Uniformly returns edge preference between a and b
 def edge_preference_assignments(a, b):
@@ -31,13 +35,14 @@ def time_estimate(roadtrip, x, edges):
     return edge_time + loc_time
 
 # Loads data from location and edge files
-def load_data(LocFile, EdgeFile):
+def load_data(LocFile, EdgeFile, user_preferred_themes):
     locations, edges = {}, {}
     with open(LocFile, 'r') as locs:
         next(csv.reader(locs))
-        for label, lat, lon, _, _ in csv.reader(locs):
-            pref = location_preference_assignments(0, 1)
-            locations[label] = {'lat': float(lat), 'lon': float(lon), 'preference': pref}
+        for label, lat, lon, _, _, themes in csv.reader(locs):
+            themes = themes.strip('"').split(',')  # Split themes into a list
+            pref = location_preference_assignments(0, 1, themes, user_preferred_themes)
+            locations[label] = {'lat': float(lat), 'lon': float(lon), 'preference': pref, 'themes': themes}
 
     with open(EdgeFile, 'r') as edgs:
         next(csv.reader(edgs))
@@ -70,7 +75,8 @@ def format_output(path, locations, edges, total_preference, total_time):
 
 # Uses heap to find all possible roadtrips that start and end at the same location within a given time at a given speed
 def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
-    locations, edges = load_data(LocFile, EdgeFile)
+    user_preferred_themes = input("Enter preferred themes (comma-separated): ").split(',')
+    locations, edges = load_data(LocFile, EdgeFile, user_preferred_themes)
     Frontier = [(-0, startLoc, 0, [], 0)]  # Negative sign for max heap
     visited = set()
     all_solutions = []

@@ -2,12 +2,15 @@ import heapq
 import csv
 import random
 
-# Uniformly returns location preference between a and b
-def location_preference_assignments(a, b, location_themes, user_preferred_themes):
-    base_pref = random.uniform(a, b)
+# Returns location preference based on user preferred themes
+def location_preference_assignments(location_themes, user_preferred_themes):
+    base_pref = 0.2
+    multiplier = 5
     for theme in user_preferred_themes:
         if theme in location_themes:
-            return base_pref * 1.5  # Increase preference for matching themes
+            return base_pref * multiplier  # Increase preference for matching themes
+        else:
+            multiplier -= 0.5
     return base_pref
 
 # Uniformly returns edge preference between a and b
@@ -41,7 +44,7 @@ def load_data(LocFile, EdgeFile, user_preferred_themes):
         next(csv.reader(locs))
         for label, lat, lon, _, _, themes in csv.reader(locs):
             themes = themes.strip('"').split(',')  # Split themes into a list
-            pref = location_preference_assignments(0, 1, themes, user_preferred_themes)
+            pref = location_preference_assignments(themes, user_preferred_themes)
             locations[label] = {'lat': float(lat), 'lon': float(lon), 'preference': pref, 'themes': themes}
 
     with open(EdgeFile, 'r') as edgs:

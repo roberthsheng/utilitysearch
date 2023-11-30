@@ -8,14 +8,15 @@ def location_preference_assignments(location_themes, user_preferred_themes):
     multiplier = 5
     for theme in user_preferred_themes:
         if theme in location_themes:
-            return base_pref * multiplier  # Increase preference for matching themes
+            return (base_pref * multiplier, theme.strip(' '))  # Return matching theme
         else:
             multiplier -= 0.5
-    return base_pref
+    return (base_pref, "None")  # Return default theme if no match
 
 # Uniformly returns edge preference between a and b
 def edge_preference_assignments(a, b):
-    return random.uniform(a, b)
+    # return random.uniform(a, b)
+    return 0
 
 # Returns total preference of a roadtrip
 def total_preference(roadtrip, locations, edges):
@@ -44,8 +45,8 @@ def load_data(LocFile, EdgeFile, user_preferred_themes):
         next(csv.reader(locs))
         for label, lat, lon, _, _, themes in csv.reader(locs):
             themes = themes.strip('"').split(',')  # Split themes into a list
-            pref = location_preference_assignments(themes, user_preferred_themes)
-            locations[label] = {'lat': float(lat), 'lon': float(lon), 'preference': pref, 'themes': themes}
+            pref, theme = location_preference_assignments(themes, user_preferred_themes)
+            locations[label] = {'lat': float(lat), 'lon': float(lon), 'preference': pref, 'themes': themes, 'determining_theme': theme}
 
     with open(EdgeFile, 'r') as edgs:
         next(csv.reader(edgs))
@@ -68,9 +69,10 @@ def format_output(path, locations, edges, total_preference, total_time):
         total_distance += edge_distance
         edge_time = edge_distance / x_mph  # Assuming x_mph is accessible here
         loc_preference = locations[locationB]['preference']
+        loc_theme = locations[locationB]['determining_theme']  # Get the theme
         loc_time = time_at_location(locations[locationB]['preference'])
         
-        line = f"{i + 1}. {locationA} {locationB} {edge_label} {edge_preference} {edge_time} {loc_preference} {loc_time}"
+        line = f"{i + 1}. {locationA} {locationB} {edge_label} {edge_preference} {edge_time} {loc_preference} ({loc_theme}) {loc_time}"
         output_lines.append(line)
     
     output_lines.append(f"{startLoc} {total_preference} {total_distance} {total_time}")
@@ -78,7 +80,7 @@ def format_output(path, locations, edges, total_preference, total_time):
 
 # Uses heap to find all possible roadtrips that start and end at the same location within a given time at a given speed
 def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
-    user_preferred_themes = input("Enter preferred themes (comma-separated): ").split(',')
+    user_preferred_themes = input("Enter preferred themes, comma-separated, with higher preference themes first. Possible themes are Weather, Sightseeing, Party, Sports, Fun, Family, Food, Nature, Relax, Celebration: ").split(',')
     locations, edges = load_data(LocFile, EdgeFile, user_preferred_themes)
     Frontier = [(-0, startLoc, 0, [], 0)]  # Negative sign for max heap
     visited = set()

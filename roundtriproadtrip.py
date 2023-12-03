@@ -13,10 +13,10 @@ def location_preference_assignments(location_themes, user_preferred_themes):
             multiplier -= 0.5
     return (base_pref, "None")  # Return default theme if no match
 
-# Uniformly returns edge preference between a and b
-def edge_preference_assignments(a, b):
-    # return random.uniform(a, b)
-    return 0
+# # Uniformly returns edge preference between a and b
+# def edge_preference_assignments(a, b):
+#     # return random.uniform(a, b)
+#     return 0
 
 # Returns total preference of a roadtrip
 def total_preference(roadtrip, locations, edges):
@@ -52,8 +52,9 @@ def load_data(LocFile, EdgeFile, user_preferred_themes):
         next(csv.reader(edgs))
         for edgeLabel, label_A, label_B, actual_distance, _, _ in csv.reader(edgs):
             if 50 <= float(actual_distance) <= 200:
-                pref = edge_preference_assignments(0, 0.1)
-                edges[edgeLabel] = {'locationA': label_A, 'locationB': label_B, 'distance': float(actual_distance), 'preference': pref}
+                #pref = edge_preference_assignments(0, 0.1)
+                #edges[edgeLabel] = {'locationA': label_A, 'locationB': label_B, 'distance': float(actual_distance), 'preference': pref}
+                edges[edgeLabel] = {'locationA': label_A, 'locationB': label_B, 'distance': float(actual_distance)}
     return locations, edges
 
 # Formats output
@@ -67,7 +68,7 @@ def format_output(path, locations, edges, total_preference, total_time):
         visited_themes = {}
         edge = edges[edge_label]
         edge_distance = edge['distance']
-        edge_preference = edge['preference']
+        #edge_preference = edge['preference']
         total_distance += edge_distance
         edge_time = edge_distance / x_mph  # Assuming x_mph is accessible here
         loc_theme = locations[locationB]['determining_theme']  # Get the theme
@@ -78,7 +79,8 @@ def format_output(path, locations, edges, total_preference, total_time):
         loc_preference = locations[locationB]['preference'] * (0.5 ** (visited_themes[loc_theme] - 1))
         loc_time = time_at_location(locations[locationB]['preference'])
         
-        line = f"{i + 1}. {locationA} {locationB} {edge_label} {edge_preference} {edge_time} (Preference:{loc_preference}) (Theme: {loc_theme}) {loc_time}"
+        #line = f"{i + 1}. {locationA} {locationB} {edge_label} {edge_preference} {edge_time} (Preference:{loc_preference}) (Theme: {loc_theme}) {loc_time}"
+        line = f"{i + 1}. {locationA} {locationB} {edge_label} {edge_time} (Preference:{loc_preference}) (Theme: {loc_theme}) {loc_time}"
         output_lines.append(line)
     
     output_lines.append(f"{startLoc} {total_preference} {total_distance} {total_time}")
@@ -121,15 +123,18 @@ def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
                 if next_loc in visited and next_loc != startLoc:
                     continue
 
-                new_total_time = total_time + (edge_info['distance'] / x_mph) + add_time_on_edge(edge_info['preference'])
-                new_edge_time = edge_time + (edge_info['distance'] / x_mph) + add_time_on_edge(edge_info['preference'])
+                #new_total_time = total_time + (edge_info['distance'] / x_mph) + add_time_on_edge(edge_info['preference'])
+                #new_edge_time = edge_time + (edge_info['distance'] / x_mph) + add_time_on_edge(edge_info['preference'])
+                new_total_time = total_time + (edge_info['distance'] / x_mph)
+                new_edge_time = edge_time + (edge_info['distance'] / x_mph)
 
                 if new_total_time > maxTime:
                     continue
 
                 current_to_next = True if current_loc == edge_info['locationA'] else False
                 next_loc_preference = locations[next_loc]['preference'] if current_to_next else locations[current_loc]['preference']
-                new_total_preference = total_preference + edge_info['preference'] + next_loc_preference
+                #new_total_preference = total_preference + edge_info['preference'] + next_loc_preference
+                new_total_preference = total_preference + next_loc_preference
 
                 new_path = path + [(current_loc, edge_label, next_loc)]
                 heapq.heappush(Frontier, (-new_total_preference, next_loc, new_total_time, new_path, new_edge_time))
@@ -142,7 +147,7 @@ def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
         with open(resultFile, 'a') as f:
             f.write(f"solutionLabel  Start:{startLoc}  Hours:{maxTime}  MPH:{x_mph}")
             f.write('\n')
-            f.write("Format: Start End EdgeLabel EdgePreference EdgeTime LocationPreference (LocationTheme) LocationTime")
+            f.write("Format: Start End EdgeLabel EdgeTime LocationPreference (LocationTheme) LocationTime")
             f.write('\n')
             f.write('\n'.join(formatted_output))
             f.write('\n')

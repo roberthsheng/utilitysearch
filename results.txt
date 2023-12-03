@@ -1,39 +1,34 @@
-solutionLabel  AtlantaGA  1000.0  30.0
-1. AtlantaGA AthensGA Atlanta_tofrom_Athens_on_I85N 0 2.433333333333333 0.2 (None) 2.0
-2. AthensGA AshevilleNC AshevilleNC_tofrom_AthensGA_on_I26_and_I85 0 5.266666666666667 0.2 (None) 2.0
-3. AshevilleNC BooneNC AshevilleNC_tofrom_BooneNC_on_I40_and_US221 0 2.8 1.0 (Party) 10.0
-4. BooneNC CharlotteNC BooneNC_tofrom_CharlotteNC_on_US321 0 3.3666666666666667 0.2 (None) 2.0
-5. CharlotteNC AugustaGA Charlotte_tofrom_Augusta 0 5.466666666666667 0.2 (None) 2.0
-6. AugustaGA CharlestonSC AugustaGA_tofrom_CharlestonSC 0 5.633333333333334 1.0 (Party) 10.0
-7. CharlestonSC SavannahGA CharlestonSC_tofrom_SavannahGA 0 3.6 0.2 (None) 2.0
-8. SavannahGA JacksonvilleFL Savannah_tofrom_Jacksonville_on_I16E 0 4.633333333333334 0.2 (None) 2.0
-9. JacksonvilleFL OrlandoFL Jacksonville_tofrom_Orlando_on_I95S 0 4.7 0.2 (None) 2.0
-10. OrlandoFL TampaFL OrlandoFL_tofrom_TampaFL 0 2.8066666666666666 0.2 (None) 2.0
-11. TampaFL GainesvilleFL Tampa_tofrom_Gainesville_on_I75N 0 4.333333333333333 0.2 (None) 2.0
-12. GainesvilleFL TallahasseeFL Gainesville_tofrom_Tallahassee_on_I75N 0 5.0 0.2 (None) 2.0
-13. TallahasseeFL DothanAL Dothan_tofrom_Tallahassee_on_I10E 0 3.433333333333333 0.2 (None) 2.0
-14. DothanAL MontgomeryAL Montgomery_tofrom_Dothan_on_US-231N 0 3.6 0.2 (None) 2.0
-15. MontgomeryAL AtlantaGA Atlanta_tofrom_Montgomery_on_I85S 0 5.366666666666666 0.2 (None) 2.0
-AtlantaGA 4.600000000000001 1873.2 62.440000000000005
+solutionLabel  Start:AtlantaGA  Hours:1000.0  MPH:30.0
+Format: Start End EdgeLabel EdgePreference EdgeTime LocationPreference (LocationTheme) LocationTime
+1. AtlantaGA AthensGA Atlanta_tofrom_Athens_on_I85N 0 2.433333333333333 (Preference:0.9) (Theme: Family) 9.0
+2. AthensGA ColumbiaSC Athens_tofrom_Columbia 0 5.466666666666667 (Preference:1.0) (Theme: Fun) 10.0
+3. ColumbiaSC AshevilleNC AshevilleNC_tofrom_ColumbiaSC_on_I26 0 5.266666666666667 (Preference:0.2) (Theme: None) 2.0
+4. AshevilleNC CharlotteNC AshevilleNC_tofrom_CharlotteNC_on_I26_and_US74 0 4.2 (Preference:0.9) (Theme: Family) 9.0
+5. CharlotteNC BooneNC BooneNC_tofrom_CharlotteNC_on_US321 0 3.3666666666666667 (Preference:0.2) (Theme: None) 2.0
+6. BooneNC KnoxvilleTN BooneNC_tofrom_KnoxvilleTN_on_I81 0 5.366666666666666 (Preference:0.2) (Theme: None) 2.0
+7. KnoxvilleTN AthensTN Knoxville_tofrom_Athens 0 1.9333333333333333 (Preference:1.0) (Theme: Fun) 10.0
+8. AthensTN NashvilleTN Nashville_tofrom_Athens 0 5.633333333333334 (Preference:0.2) (Theme: None) 2.0
+9. NashvilleTN JacksonTN Nashville_tofrom_Jackson_on_I40 0 4.3 (Preference:1.0) (Theme: Fun) 10.0
+10. JacksonTN ClarksvilleTN Clarksville_tofrom_JacksonTN 0 4.133333333333334 (Preference:0.2) (Theme: None) 2.0
+11. ClarksvilleTN HuntsvilleAL Clarksville_tofrom_HuntsvilleAL 0 5.466666666666667 (Preference:0.2) (Theme: None) 2.0
+12. HuntsvilleAL GadsenAL HuntsvilleAL_tofrom_GadsenAL 0 2.4 (Preference:0.8) (Theme: Party) 8.0
+13. GadsenAL AtlantaGA GadsenAL_tofrom_AtlantaGA 0 3.933333333333333 (Preference:0.8) (Theme: Party) 8.0
+AtlantaGA 10.700000000000001 1617.0 53.9
 
-solutionLabel  NashvilleTN  50.0  50.0
-1. NashvilleTN AlbanyKY NashvilleTN_tofrom_AlbanyKY 0 2.62 1.0 (Nature) 10.0
-2. AlbanyKY NashvilleTN NashvilleTN_tofrom_AlbanyKY 0 2.62 1.0 (Nature) 10.0
-NashvilleTN 2.0 262.0 5.24
-
-solutionLabel  Start Location:AtlantaGA  Time (hours):3000.0  Speed (mph):60.0
-1. AtlantaGA ChattanoogaTN ChattanoogaTN_tofrom_AtlantaGA 0 1.9666666666666666 1.0 (Weather) 10.0
-2. ChattanoogaTN AthensGA Athens_tofrom_Chattanooga_on_I75N 0 2.933333333333333 0.2 (None) 2.0
-3. AthensGA AshevilleNC AshevilleNC_tofrom_AthensGA_on_I26_and_I85 0 2.6333333333333333 0.2 (None) 2.0
-4. AshevilleNC KnoxvilleTN AshevilleNC_tofrom_KnoxvilleTN_on_I40 0 1.9333333333333333 0.9 (Fun) 9.0
-5. KnoxvilleTN BooneNC BooneNC_tofrom_KnoxvilleTN_on_I81 0 2.683333333333333 0.2 (None) 2.0
-6. BooneNC CharlotteNC BooneNC_tofrom_CharlotteNC_on_US321 0 1.6833333333333333 0.2 (None) 2.0
-7. CharlotteNC AugustaGA Charlotte_tofrom_Augusta 0 2.7333333333333334 0.2 (None) 2.0
-8. AugustaGA AtlantaGA Atlanta_tofrom_Augusta 0 2.4166666666666665 0.9 (Fun) 9.0
-AtlantaGA 4.5 1139.0 18.983333333333334
-
-solutionLabel  Start:NashvilleTN  Hours:300.0  MPH:30.0
-1. NashvilleTN AlbanyKY NashvilleTN_tofrom_AlbanyKY 0 4.366666666666666 0.2 (None) 2.0
-2. AlbanyKY NashvilleTN NashvilleTN_tofrom_AlbanyKY 0 4.366666666666666 0.2 (None) 2.0
-NashvilleTN 0.4 262.0 8.733333333333333
+solutionLabel  Start:AtlantaGA  Hours:1000.0  MPH:30.0
+Format: Start End EdgeLabel EdgeTime LocationPreference (LocationTheme) LocationTime
+1. AtlantaGA AthensGA Atlanta_tofrom_Athens_on_I85N 2.433333333333333 (Preference:0.9) (Theme: Family) 9.0
+2. AthensGA ColumbiaSC Athens_tofrom_Columbia 5.466666666666667 (Preference:1.0) (Theme: Fun) 10.0
+3. ColumbiaSC AshevilleNC AshevilleNC_tofrom_ColumbiaSC_on_I26 5.266666666666667 (Preference:0.2) (Theme: None) 2.0
+4. AshevilleNC CharlotteNC AshevilleNC_tofrom_CharlotteNC_on_I26_and_US74 4.2 (Preference:0.9) (Theme: Family) 9.0
+5. CharlotteNC BooneNC BooneNC_tofrom_CharlotteNC_on_US321 3.3666666666666667 (Preference:0.2) (Theme: None) 2.0
+6. BooneNC KnoxvilleTN BooneNC_tofrom_KnoxvilleTN_on_I81 5.366666666666666 (Preference:0.2) (Theme: None) 2.0
+7. KnoxvilleTN AthensTN Knoxville_tofrom_Athens 1.9333333333333333 (Preference:1.0) (Theme: Fun) 10.0
+8. AthensTN NashvilleTN Nashville_tofrom_Athens 5.633333333333334 (Preference:0.2) (Theme: None) 2.0
+9. NashvilleTN JacksonTN Nashville_tofrom_Jackson_on_I40 4.3 (Preference:1.0) (Theme: Fun) 10.0
+10. JacksonTN ClarksvilleTN Clarksville_tofrom_JacksonTN 4.133333333333334 (Preference:0.2) (Theme: None) 2.0
+11. ClarksvilleTN HuntsvilleAL Clarksville_tofrom_HuntsvilleAL 5.466666666666667 (Preference:0.2) (Theme: None) 2.0
+12. HuntsvilleAL GadsenAL HuntsvilleAL_tofrom_GadsenAL 2.4 (Preference:0.8) (Theme: Party) 8.0
+13. GadsenAL AtlantaGA GadsenAL_tofrom_AtlantaGA 3.933333333333333 (Preference:0.8) (Theme: Party) 8.0
+AtlantaGA 10.700000000000001 1617.0 53.9
 

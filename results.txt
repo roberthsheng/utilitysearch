@@ -1,0 +1,18 @@
+solutionLabel  AtlantaGA  1000.0  30.0
+1. AtlantaGA AthensGA Atlanta_tofrom_Athens_on_I85N 0 2.433333333333333 0.2 (None) 2.0
+2. AthensGA AshevilleNC AshevilleNC_tofrom_AthensGA_on_I26_and_I85 0 5.266666666666667 0.2 (None) 2.0
+3. AshevilleNC BooneNC AshevilleNC_tofrom_BooneNC_on_I40_and_US221 0 2.8 1.0 (Party) 10.0
+4. BooneNC CharlotteNC BooneNC_tofrom_CharlotteNC_on_US321 0 3.3666666666666667 0.2 (None) 2.0
+5. CharlotteNC AugustaGA Charlotte_tofrom_Augusta 0 5.466666666666667 0.2 (None) 2.0
+6. AugustaGA CharlestonSC AugustaGA_tofrom_CharlestonSC 0 5.633333333333334 1.0 (Party) 10.0
+7. CharlestonSC SavannahGA CharlestonSC_tofrom_SavannahGA 0 3.6 0.2 (None) 2.0
+8. SavannahGA JacksonvilleFL Savannah_tofrom_Jacksonville_on_I16E 0 4.633333333333334 0.2 (None) 2.0
+9. JacksonvilleFL OrlandoFL Jacksonville_tofrom_Orlando_on_I95S 0 4.7 0.2 (None) 2.0
+10. OrlandoFL TampaFL OrlandoFL_tofrom_TampaFL 0 2.8066666666666666 0.2 (None) 2.0
+11. TampaFL GainesvilleFL Tampa_tofrom_Gainesville_on_I75N 0 4.333333333333333 0.2 (None) 2.0
+12. GainesvilleFL TallahasseeFL Gainesville_tofrom_Tallahassee_on_I75N 0 5.0 0.2 (None) 2.0
+13. TallahasseeFL DothanAL Dothan_tofrom_Tallahassee_on_I10E 0 3.433333333333333 0.2 (None) 2.0
+14. DothanAL MontgomeryAL Montgomery_tofrom_Dothan_on_US-231N 0 3.6 0.2 (None) 2.0
+15. MontgomeryAL AtlantaGA Atlanta_tofrom_Montgomery_on_I85S 0 5.366666666666666 0.2 (None) 2.0
+AtlantaGA 4.600000000000001 1873.2 62.440000000000005
+

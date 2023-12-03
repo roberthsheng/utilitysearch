@@ -78,7 +78,7 @@ def format_output(path, locations, edges, total_preference, total_time):
         loc_preference = locations[locationB]['preference'] * (0.5 ** (visited_themes[loc_theme] - 1))
         loc_time = time_at_location(locations[locationB]['preference'])
         
-        line = f"{i + 1}. {locationA} {locationB} {edge_label} {edge_preference} {edge_time} {loc_preference} ({loc_theme}) {loc_time}"
+        line = f"{i + 1}. {locationA} {locationB} {edge_label} {edge_preference} {edge_time} (Preference:{loc_preference}) (Theme: {loc_theme}) {loc_time}"
         output_lines.append(line)
     
     output_lines.append(f"{startLoc} {total_preference} {total_distance} {total_time}")
@@ -141,6 +141,8 @@ def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
             print(line)
         with open(resultFile, 'a') as f:
             f.write(f"solutionLabel  Start:{startLoc}  Hours:{maxTime}  MPH:{x_mph}")
+            f.write('\n')
+            f.write("Format: Start End EdgeLabel EdgePreference EdgeTime LocationPreference (LocationTheme) LocationTime")
             f.write('\n')
             f.write('\n'.join(formatted_output))
             f.write('\n')

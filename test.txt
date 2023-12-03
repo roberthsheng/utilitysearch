@@ -1,0 +1,70 @@
+solutionLabel  NashvilleTN  24.0  65.0
+1. NashvilleTN AthensTN Nashville_tofrom_Athens 0 2.6 1.0 (Fun) 10.0
+2. AthensTN KnoxvilleTN Knoxville_tofrom_Athens 0 0.8923076923076924 0.2 (None) 2.0
+3. KnoxvilleTN AshevilleNC AshevilleNC_tofrom_KnoxvilleTN_on_I40 0 1.7846153846153847 0.2 (None) 2.0
+4. AshevilleNC ColumbiaSC AshevilleNC_tofrom_ColumbiaSC_on_I26 0 2.4307692307692306 1.0 (Fun) 10.0
+5. ColumbiaSC AthensGA Athens_tofrom_Columbia 0 2.523076923076923 0.9 (Family) 9.0
+6. AthensGA AtlantaGA Atlanta_tofrom_Athens_on_I85N 0 1.123076923076923 0.2 (None) 2.0
+7. AtlantaGA MontgomeryAL Atlanta_tofrom_Montgomery_on_I85S 0 2.476923076923077 0.8 (Food) 8.0
+8. MontgomeryAL HuntsvilleAL Huntsville_tofrom_MontgomeryAL_on_I65S 0 2.923076923076923 0.8 (Food) 8.0
+9. HuntsvilleAL ClarksvilleTN Clarksville_tofrom_HuntsvilleAL 0 2.523076923076923 0.2 (None) 2.0
+10. ClarksvilleTN JacksonTN Clarksville_tofrom_JacksonTN 0 1.9076923076923078 1.0 (Fun) 10.0
+11. JacksonTN NashvilleTN Nashville_tofrom_Jackson_on_I40 0 1.9846153846153847 0.2 (None) 2.0
+NashvilleTN 9.5 1506.0 23.16923076923077
+
+solutionLabel  NashvilleTN  24.0  65.0
+1. NashvilleTN AthensTN Nashville_tofrom_Athens 0 2.6 1.0 (Fun) 10.0
+2. AthensTN KnoxvilleTN Knoxville_tofrom_Athens 0 0.8923076923076924 0.2 (None) 2.0
+3. KnoxvilleTN AshevilleNC AshevilleNC_tofrom_KnoxvilleTN_on_I40 0 1.7846153846153847 0.2 (None) 2.0
+4. AshevilleNC ColumbiaSC AshevilleNC_tofrom_ColumbiaSC_on_I26 0 2.4307692307692306 1.0 (Fun) 10.0
+5. ColumbiaSC AthensGA Athens_tofrom_Columbia 0 2.523076923076923 0.9 (Family) 9.0
+6. AthensGA AtlantaGA Atlanta_tofrom_Athens_on_I85N 0 1.123076923076923 0.2 (None) 2.0
+7. AtlantaGA MontgomeryAL Atlanta_tofrom_Montgomery_on_I85S 0 2.476923076923077 0.8 (Food) 8.0
+8. MontgomeryAL HuntsvilleAL Huntsville_tofrom_MontgomeryAL_on_I65S 0 2.923076923076923 0.8 (Food) 8.0
+9. HuntsvilleAL ClarksvilleTN Clarksville_tofrom_HuntsvilleAL 0 2.523076923076923 0.2 (None) 2.0
+10. ClarksvilleTN MurfreesboroTN MurfreesboroTN_tofrom_ClarksvilleTN 0 1.24 0.8 (Food) 8.0
+11. MurfreesboroTN FortCampbellKY FtCampbell_tofrom_MurfreesboroTN 0 1.4292307692307693 0.2 (None) 2.0
+12. FortCampbellKY NashvilleTN FtCampbell_tofrom_NashvilleTN 0 0.9492307692307693 0.2 (None) 2.0
+NashvilleTN 8.7 1488.2 22.895384615384614
+
+solutionLabel  NashvilleTN  24.0  65.0
+1. NashvilleTN AthensTN Nashville_tofrom_Athens 0 2.6 1.0 (Fun) 10.0
+2. AthensTN KnoxvilleTN Knoxville_tofrom_Athens 0 0.8923076923076924 0.2 (None) 2.0
+3. KnoxvilleTN AshevilleNC AshevilleNC_tofrom_KnoxvilleTN_on_I40 0 1.7846153846153847 0.2 (None) 2.0
+4. AshevilleNC ColumbiaSC AshevilleNC_tofrom_ColumbiaSC_on_I26 0 2.4307692307692306 1.0 (Fun) 10.0
+5. ColumbiaSC AthensGA Athens_tofrom_Columbia 0 2.523076923076923 0.9 (Family) 9.0
+6. AthensGA AtlantaGA Atlanta_tofrom_Athens_on_I85N 0 1.123076923076923 0.2 (None) 2.0
+7. AtlantaGA MontgomeryAL Atlanta_tofrom_Montgomery_on_I85S 0 2.476923076923077 0.8 (Food) 8.0
+8. MontgomeryAL HuntsvilleAL Huntsville_tofrom_MontgomeryAL_on_I65S 0 2.923076923076923 0.8 (Food) 8.0
+9. HuntsvilleAL ClarksvilleTN Clarksville_tofrom_HuntsvilleAL 0 2.523076923076923 0.2 (None) 2.0
+10. ClarksvilleTN MurfreesboroTN MurfreesboroTN_tofrom_ClarksvilleTN 0 1.24 0.8 (Food) 8.0
+11. MurfreesboroTN FortCampbellKY MurfreesboroTN_tofrom_FortCampbellKY 0 1.4307692307692308 0.2 (None) 2.0
+12. FortCampbellKY NashvilleTN FtCampbell_tofrom_NashvilleTN 0 0.9492307692307693 0.2 (None) 2.0
+NashvilleTN 8.1 1488.3 22.896923076923073
+
+solutionLabel  NashvilleTN  24.0  65.0
+1. NashvilleTN AthensTN Nashville_tofrom_Athens 0 2.6 1.0 (Fun) 10.0
+2. AthensTN KnoxvilleTN Knoxville_tofrom_Athens 0 0.8923076923076924 0.2 (None) 2.0
+3. KnoxvilleTN AshevilleNC AshevilleNC_tofrom_KnoxvilleTN_on_I40 0 1.7846153846153847 0.2 (None) 2.0
+4. AshevilleNC ColumbiaSC AshevilleNC_tofrom_ColumbiaSC_on_I26 0 2.4307692307692306 1.0 (Fun) 10.0
+5. ColumbiaSC AthensGA Athens_tofrom_Columbia 0 2.523076923076923 0.9 (Family) 9.0
+6. AthensGA AtlantaGA Atlanta_tofrom_Athens_on_I85N 0 1.123076923076923 0.2 (None) 2.0
+7. AtlantaGA MontgomeryAL Atlanta_tofrom_Montgomery_on_I85S 0 2.476923076923077 0.8 (Food) 8.0
+8. MontgomeryAL HuntsvilleAL Huntsville_tofrom_MontgomeryAL_on_I65S 0 2.923076923076923 0.8 (Food) 8.0
+9. HuntsvilleAL NashvilleTN Nashville_tofrom_Huntsville_on_I65S 0 1.7692307692307692 0.2 (None) 2.0
+NashvilleTN 7.5 1204.0 18.52307692307692
+
+solutionLabel  NashvilleTN  24.0  65.0
+1. NashvilleTN AthensTN Nashville_tofrom_Athens 0 2.6 1.0 (Fun) 10.0
+2. AthensTN KnoxvilleTN Knoxville_tofrom_Athens 0 0.8923076923076924 0.2 (None) 2.0
+3. KnoxvilleTN AshevilleNC AshevilleNC_tofrom_KnoxvilleTN_on_I40 0 1.7846153846153847 0.2 (None) 2.0
+4. AshevilleNC ColumbiaSC AshevilleNC_tofrom_ColumbiaSC_on_I26 0 2.4307692307692306 1.0 (Fun) 10.0
+5. ColumbiaSC AthensGA Athens_tofrom_Columbia 0 2.523076923076923 0.9 (Family) 9.0
+6. AthensGA AtlantaGA Atlanta_tofrom_Athens_on_I85N 0 1.123076923076923 0.2 (None) 2.0
+7. AtlantaGA MontgomeryAL Atlanta_tofrom_Montgomery_on_I85S 0 2.476923076923077 0.8 (Food) 8.0
+8. MontgomeryAL HuntsvilleAL Huntsville_tofrom_MontgomeryAL_on_I65S 0 2.923076923076923 0.8 (Food) 8.0
+9. HuntsvilleAL BirminghamAL Huntsville_tofrom_Birmingham_on_I65 0 1.5692307692307692 0.2 (None) 2.0
+10. BirminghamAL HuntsvilleAL Huntsville_tofrom_Birmingham_on_I65 0 1.5692307692307692 0.8 (Food) 8.0
+11. HuntsvilleAL NashvilleTN Nashville_tofrom_Huntsville_on_I65S 0 1.7692307692307692 0.2 (None) 2.0
+NashvilleTN 7.9 1408.0 21.661538461538463
+

@@ -61,15 +61,21 @@ def format_output(path, locations, edges, total_preference, total_time):
     output_lines = []
     # output_lines.append(f"solutionLabel  {startLoc}  {}  {total_time}")
     total_distance = 0
+    global visited_themes
 
     for i, (locationA, edge_label, locationB) in enumerate(path):
+        visited_themes = {}
         edge = edges[edge_label]
         edge_distance = edge['distance']
         edge_preference = edge['preference']
         total_distance += edge_distance
         edge_time = edge_distance / x_mph  # Assuming x_mph is accessible here
-        loc_preference = locations[locationB]['preference']
         loc_theme = locations[locationB]['determining_theme']  # Get the theme
+        if loc_theme in visited_themes:
+            visited_themes[loc_theme] += 1
+        else:
+            visited_themes[loc_theme] = 1
+        loc_preference = locations[locationB]['preference'] * (0.5 ** (visited_themes[loc_theme] - 1))
         loc_time = time_at_location(locations[locationB]['preference'])
         
         line = f"{i + 1}. {locationA} {locationB} {edge_label} {edge_preference} {edge_time} {loc_preference} ({loc_theme}) {loc_time}"
@@ -80,6 +86,7 @@ def format_output(path, locations, edges, total_preference, total_time):
 
 # Uses heap to find all possible roadtrips that start and end at the same location within a given time at a given speed
 def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
+    global visited_themes
     user_preferred_themes = input("Enter preferred themes, comma-separated, with higher preference themes first. Possible themes are Weather, Sightseeing, Party, Sports, Fun, Family, Food, Nature, Relax, Celebration: ").split(',')
     locations, edges = load_data(LocFile, EdgeFile, user_preferred_themes)
     Frontier = [(-0, startLoc, 0, [], 0)]  # Negative sign for max heap
@@ -101,6 +108,8 @@ def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
             if cont.lower() == 'no':
                 break
             visited = set()
+            # clear visited themes dict
+            visited_themes = {}
             continue
         
         visited.add(current_loc)
@@ -147,4 +156,6 @@ if __name__ == "__main__":
     maxTime = float(input("Enter maximum time: "))
     x_mph = float(input("Enter speed: "))
     resultsfile = input("Enter results file: ")
+    # global visited themes dict keeping track of visited themes and number of times visited
+    visited_themes = {}
     RoundTripRoadTrip(startLoc, locationfile, edgefile, maxTime, x_mph, resultsfile)

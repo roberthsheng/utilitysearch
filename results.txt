@@ -16,3 +16,24 @@ solutionLabel  AtlantaGA  1000.0  30.0
 15. MontgomeryAL AtlantaGA Atlanta_tofrom_Montgomery_on_I85S 0 5.366666666666666 0.2 (None) 2.0
 AtlantaGA 4.600000000000001 1873.2 62.440000000000005
 
+solutionLabel  NashvilleTN  50.0  50.0
+1. NashvilleTN AlbanyKY NashvilleTN_tofrom_AlbanyKY 0 2.62 1.0 (Nature) 10.0
+2. AlbanyKY NashvilleTN NashvilleTN_tofrom_AlbanyKY 0 2.62 1.0 (Nature) 10.0
+NashvilleTN 2.0 262.0 5.24
+
+solutionLabel  Start Location:AtlantaGA  Time (hours):3000.0  Speed (mph):60.0
+1. AtlantaGA ChattanoogaTN ChattanoogaTN_tofrom_AtlantaGA 0 1.9666666666666666 1.0 (Weather) 10.0
+2. ChattanoogaTN AthensGA Athens_tofrom_Chattanooga_on_I75N 0 2.933333333333333 0.2 (None) 2.0
+3. AthensGA AshevilleNC AshevilleNC_tofrom_AthensGA_on_I26_and_I85 0 2.6333333333333333 0.2 (None) 2.0
+4. AshevilleNC KnoxvilleTN AshevilleNC_tofrom_KnoxvilleTN_on_I40 0 1.9333333333333333 0.9 (Fun) 9.0
+5. KnoxvilleTN BooneNC BooneNC_tofrom_KnoxvilleTN_on_I81 0 2.683333333333333 0.2 (None) 2.0
+6. BooneNC CharlotteNC BooneNC_tofrom_CharlotteNC_on_US321 0 1.6833333333333333 0.2 (None) 2.0
+7. CharlotteNC AugustaGA Charlotte_tofrom_Augusta 0 2.7333333333333334 0.2 (None) 2.0
+8. AugustaGA AtlantaGA Atlanta_tofrom_Augusta 0 2.4166666666666665 0.9 (Fun) 9.0
+AtlantaGA 4.5 1139.0 18.983333333333334
+
+solutionLabel  Start:NashvilleTN  Hours:300.0  MPH:30.0
+1. NashvilleTN AlbanyKY NashvilleTN_tofrom_AlbanyKY 0 4.366666666666666 0.2 (None) 2.0
+2. AlbanyKY NashvilleTN NashvilleTN_tofrom_AlbanyKY 0 4.366666666666666 0.2 (None) 2.0
+NashvilleTN 0.4 262.0 8.733333333333333
+

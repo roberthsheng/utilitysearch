@@ -87,7 +87,7 @@ def format_output(path, locations, edges, total_preference, total_time):
 # Uses heap to find all possible roadtrips that start and end at the same location within a given time at a given speed
 def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
     global visited_themes
-    user_preferred_themes = input("Enter preferred themes, comma-separated, with higher preference themes first. Possible themes are Weather, Sightseeing, Party, Sports, Fun, Family, Food, Nature, Relax, Celebration: ").split(',')
+    user_preferred_themes = input("Enter preferred themes, comma-separated, with higher preference themes first. \nChoose Themes: Weather, Sightseeing, Party, Sports, Fun, Family, Food, Nature, Relax, Celebration: ").split(',')
     locations, edges = load_data(LocFile, EdgeFile, user_preferred_themes)
     Frontier = [(-0, startLoc, 0, [], 0)]  # Negative sign for max heap
     visited = set()
@@ -136,11 +136,11 @@ def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
 
     for solution in all_solutions:
         formatted_output = format_output(solution['path'], locations, edges, solution['total_preference'], solution['total_time'])
-        print(f"solutionLabel  {startLoc}  {maxTime}  {x_mph}")
+        print(f"solutionLabel Start:{startLoc}  Hours:{maxTime}  MPH:{x_mph}")
         for line in formatted_output:
             print(line)
         with open(resultFile, 'a') as f:
-            f.write(f"solutionLabel  {startLoc}  {maxTime}  {x_mph}")
+            f.write(f"solutionLabel  Start:{startLoc}  Hours:{maxTime}  MPH:{x_mph}")
             f.write('\n')
             f.write('\n'.join(formatted_output))
             f.write('\n')
@@ -150,12 +150,12 @@ def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
 
 # Test
 if __name__ == "__main__":
-    startLoc = input("Enter starting location: ")
-    locationfile = input("Enter location file: ")
-    edgefile = input("Enter edge file: ")
-    maxTime = float(input("Enter maximum time: "))
-    x_mph = float(input("Enter speed: "))
-    resultsfile = input("Enter results file: ")
+    startLoc = input("Enter starting location (Example: NashvilleTN): ")
+    locationfile = input("Enter location file (locations.csv): ")
+    edgefile = input("Enter edge file (edges.csv): ")
+    maxTime = float(input("Enter maximum time (in hours, ex. 50): "))
+    x_mph = float(input("Enter speed (in mph, ex. 50): "))
+    resultsfile = input("Enter results file (results.txt): ")
     # global visited themes dict keeping track of visited themes and number of times visited
     visited_themes = {}
     RoundTripRoadTrip(startLoc, locationfile, edgefile, maxTime, x_mph, resultsfile)

@@ -55,10 +55,9 @@ def format_output(path, locations, edges, total_preference, total_time):
     output_lines = []
     # output_lines.append(f"solutionLabel  {startLoc}  {}  {total_time}")
     total_distance = 0
-    global visited_themes
+    visited_themes = {}
 
     for i, (locationA, edge_label, locationB) in enumerate(path):
-        visited_themes = {}
         edge = edges[edge_label]
         edge_distance = edge['distance']
         total_distance += edge_distance
@@ -68,7 +67,7 @@ def format_output(path, locations, edges, total_preference, total_time):
             visited_themes[loc_theme] += 1
         else:
             visited_themes[loc_theme] = 1
-        loc_preference = locations[locationB]['preference'] * (0.5 ** (visited_themes[loc_theme] - 1))
+        loc_preference = locations[locationB]['preference'] * (0.75 ** (visited_themes[loc_theme] - 1))
         loc_time = time_at_location(locations[locationB]['preference'])
         
         line = f"{i + 1}. {locationA} to {locationB}, {edge_label}: {edge_time:.2f} hours travelled (Preference:{loc_preference}) (Theme: {loc_theme}); {loc_time} hours at location"
@@ -149,6 +148,4 @@ if __name__ == "__main__":
     maxTime = float(input("Enter maximum time (in hours, ex. 50): "))
     x_mph = float(input("Enter speed (in mph, ex. 50): "))
     resultsfile = input("Enter results file (results.txt): ")
-    # global visited themes dict keeping track of visited themes and number of times visited
-    visited_themes = {}
     RoundTripRoadTrip(startLoc, locationfile, edgefile, maxTime, x_mph, resultsfile)

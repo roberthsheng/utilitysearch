@@ -99,8 +99,6 @@ def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
             if cont.lower() == 'no':
                 break
             visited = set()
-            # clear visited themes dict
-            visited_themes = {}
             continue
         
         visited.add(current_loc)

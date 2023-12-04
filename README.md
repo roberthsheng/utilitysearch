@@ -40,8 +40,3 @@ Usage of AI: Within project 4, we first utilized AI (specifically GPT4 from Open
 
 After understanding the basic design idea of our program, we began to implement our dynamic preferences and modify the customizability/readability of the program such that it would function as an actual road trip guide. Although most of the code and scalar values (ex. Utility dropoff, time spent multipliers) were manually written, we did use ChatGPT in an incremental manner whenever we ran into unexpected errors, such as type consistency and so on. A good example of this is when we were updating the preferences for a visited_theme (present within a dictionary, where a key is a theme and the value being the number of times it was being visited) and making sure those changes were preserved across multiple edges, and also allowing the program to properly handle continuations (ex. Find new road trips with the same user inputted information). Overall, we used ChatGPT more for idea generation and design inquiries, as to how everything should function and work together to output proper road trips according to their dynamic preferences.
 
-
-
-
-continue
-

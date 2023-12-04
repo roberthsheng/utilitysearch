@@ -68,7 +68,7 @@ def format_output(path, locations, edges, total_preference, total_time):
         else:
             visited_themes[loc_theme] = 1
         loc_preference = locations[locationB]['preference'] * (0.75 ** (visited_themes[loc_theme] - 1))
-        loc_time = time_at_location(locations[locationB]['preference'])
+        loc_time = time_at_location(loc_preference)
         
         line = f"{i + 1}. {locationA} to {locationB}, {edge_label}: {edge_time:.2f} hours travelled (Preference:{loc_preference}) (Theme: {loc_theme}); {loc_time} hours at location"
         output_lines.append(line)
@@ -78,7 +78,6 @@ def format_output(path, locations, edges, total_preference, total_time):
 
 # Uses heap to find all possible roadtrips that start and end at the same location within a given time at a given speed
 def RoundTripRoadTrip(startLoc, LocFile, EdgeFile, maxTime, x_mph, resultFile):
-    global visited_themes
     user_preferred_themes = input("Enter preferred themes, comma-separated, with higher preference themes first. \nChoose Themes: Weather, Sightseeing, Party, Sports, Fun, Family, Food, Nature, Relax, Celebration: ").split(',')
     locations, edges = load_data(LocFile, EdgeFile, user_preferred_themes)
     Frontier = [(-0, startLoc, 0, [], 0)]  # Negative sign for max heap

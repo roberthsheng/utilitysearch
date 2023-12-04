@@ -132,3 +132,81 @@ Total Preference: 9.000
 Miles Driven: 2624.2 
 Hours Driven: 87.473
 
+solutionLabel  Start:AtlantaGA  Hours:1000.0  MPH:30.0
+1. AtlantaGA to AthensGA, Atlanta_tofrom_Athens_on_I85N: 2.43 hours travelled (Preference:0.9) (Theme: Family); 9.0 hours at location
+2. AthensGA to ColumbiaSC, Athens_tofrom_Columbia: 5.47 hours travelled (Preference:1.0) (Theme: Fun); 10.0 hours at location
+3. ColumbiaSC to AshevilleNC, AshevilleNC_tofrom_ColumbiaSC_on_I26: 5.27 hours travelled (Preference:0.2) (Theme: None); 2.0 hours at location
+4. AshevilleNC to CharlotteNC, AshevilleNC_tofrom_CharlotteNC_on_I26_and_US74: 4.20 hours travelled (Preference:0.675) (Theme: Family); 9.0 hours at location
+5. CharlotteNC to BooneNC, BooneNC_tofrom_CharlotteNC_on_US321: 3.37 hours travelled (Preference:0.15000000000000002) (Theme: None); 2.0 hours at location
+6. BooneNC to KnoxvilleTN, BooneNC_tofrom_KnoxvilleTN_on_I81: 5.37 hours travelled (Preference:0.1125) (Theme: None); 2.0 hours at location
+7. KnoxvilleTN to AthensTN, Knoxville_tofrom_Athens: 1.93 hours travelled (Preference:0.75) (Theme: Fun); 10.0 hours at location
+8. AthensTN to NashvilleTN, Nashville_tofrom_Athens: 5.63 hours travelled (Preference:0.084375) (Theme: None); 2.0 hours at location
+9. NashvilleTN to JacksonTN, Nashville_tofrom_Jackson_on_I40: 4.30 hours travelled (Preference:0.5625) (Theme: Fun); 10.0 hours at location
+10. JacksonTN to ClarksvilleTN, Clarksville_tofrom_JacksonTN: 4.13 hours travelled (Preference:0.06328125) (Theme: None); 2.0 hours at location
+11. ClarksvilleTN to HuntsvilleAL, Clarksville_tofrom_HuntsvilleAL: 5.47 hours travelled (Preference:0.0474609375) (Theme: None); 2.0 hours at location
+12. HuntsvilleAL to GadsenAL, HuntsvilleAL_tofrom_GadsenAL: 2.40 hours travelled (Preference:0.8) (Theme: Party); 8.0 hours at location
+13. GadsenAL to AtlantaGA, GadsenAL_tofrom_AtlantaGA: 3.93 hours travelled (Preference:0.6000000000000001) (Theme: Party); 8.0 hours at location
+Start: AtlantaGA 
+Total Preference: 10.700 
+Miles Driven: 1617.0 
+Hours Driven: 53.900
+
+solutionLabel  Start:AtlantaGA  Hours:1000.0  MPH:30.0
+1. AtlantaGA to AthensGA, Atlanta_tofrom_Athens_on_I85N: 2.43 hours travelled (Preference:0.9) (Theme: Family); 9.0 hours at location
+2. AthensGA to ColumbiaSC, Athens_tofrom_Columbia: 5.47 hours travelled (Preference:1.0) (Theme: Fun); 10.0 hours at location
+3. ColumbiaSC to AshevilleNC, AshevilleNC_tofrom_ColumbiaSC_on_I26: 5.27 hours travelled (Preference:0.2) (Theme: None); 2.0 hours at location
+4. AshevilleNC to CharlotteNC, AshevilleNC_tofrom_CharlotteNC_on_I26_and_US74: 4.20 hours travelled (Preference:0.675) (Theme: Family); 9.0 hours at location
+5. CharlotteNC to BooneNC, BooneNC_tofrom_CharlotteNC_on_US321: 3.37 hours travelled (Preference:0.15000000000000002) (Theme: None); 2.0 hours at location
+6. BooneNC to KnoxvilleTN, BooneNC_tofrom_KnoxvilleTN_on_I81: 5.37 hours travelled (Preference:0.1125) (Theme: None); 2.0 hours at location
+7. KnoxvilleTN to AthensTN, Knoxville_tofrom_Athens: 1.93 hours travelled (Preference:0.75) (Theme: Fun); 10.0 hours at location
+8. AthensTN to NashvilleTN, Nashville_tofrom_Athens: 5.63 hours travelled (Preference:0.084375) (Theme: None); 2.0 hours at location
+9. NashvilleTN to JacksonTN, Nashville_tofrom_Jackson_on_I40: 4.30 hours travelled (Preference:0.5625) (Theme: Fun); 10.0 hours at location
+10. JacksonTN to ClarksvilleTN, Clarksville_tofrom_JacksonTN: 4.13 hours travelled (Preference:0.06328125) (Theme: None); 2.0 hours at location
+11. ClarksvilleTN to HuntsvilleAL, Clarksville_tofrom_HuntsvilleAL: 5.47 hours travelled (Preference:0.0474609375) (Theme: None); 2.0 hours at location
+12. HuntsvilleAL to BirminghamAL, Huntsville_tofrom_Birmingham_on_I65: 3.40 hours travelled (Preference:0.035595703125) (Theme: None); 2.0 hours at location
+13. BirminghamAL to AtlantaGA, AtlantaGA_tofrom_BirminghamAL: 4.90 hours travelled (Preference:0.8) (Theme: Party); 8.0 hours at location
+Start: AtlantaGA 
+Total Preference: 9.500 
+Miles Driven: 1676.0 
+Hours Driven: 55.867
+
+solutionLabel  Start:AtlantaGA  Hours:1000.0  MPH:30.0
+1. AtlantaGA to AthensGA, Atlanta_tofrom_Athens_on_I85N: 2.43 hours travelled (Preference:0.9) (Theme: Family); 9.0 hours at location
+2. AthensGA to ColumbiaSC, Athens_tofrom_Columbia: 5.47 hours travelled (Preference:1.0) (Theme: Fun); 10.0 hours at location
+3. ColumbiaSC to AshevilleNC, AshevilleNC_tofrom_ColumbiaSC_on_I26: 5.27 hours travelled (Preference:0.2) (Theme: None); 2.0 hours at location
+4. AshevilleNC to CharlotteNC, AshevilleNC_tofrom_CharlotteNC_on_I26_and_US74: 4.20 hours travelled (Preference:0.675) (Theme: Family); 9.0 hours at location
+5. CharlotteNC to BooneNC, BooneNC_tofrom_CharlotteNC_on_US321: 3.37 hours travelled (Preference:0.15000000000000002) (Theme: None); 2.0 hours at location
+6. BooneNC to KnoxvilleTN, BooneNC_tofrom_KnoxvilleTN_on_I81: 5.37 hours travelled (Preference:0.1125) (Theme: None); 2.0 hours at location
+7. KnoxvilleTN to AthensTN, Knoxville_tofrom_Athens: 1.93 hours travelled (Preference:0.75) (Theme: Fun); 10.0 hours at location
+8. AthensTN to NashvilleTN, Nashville_tofrom_Athens: 5.63 hours travelled (Preference:0.084375) (Theme: None); 2.0 hours at location
+9. NashvilleTN to JacksonTN, Nashville_tofrom_Jackson_on_I40: 4.30 hours travelled (Preference:0.5625) (Theme: Fun); 10.0 hours at location
+10. JacksonTN to ClarksvilleTN, Clarksville_tofrom_JacksonTN: 4.13 hours travelled (Preference:0.06328125) (Theme: None); 2.0 hours at location
+11. ClarksvilleTN to HuntsvilleAL, Clarksville_tofrom_HuntsvilleAL: 5.47 hours travelled (Preference:0.0474609375) (Theme: None); 2.0 hours at location
+12. HuntsvilleAL to BirminghamAL, Huntsville_tofrom_Birmingham_on_I65: 3.40 hours travelled (Preference:0.035595703125) (Theme: None); 2.0 hours at location
+13. BirminghamAL to HuntsvilleAL, Huntsville_tofrom_Birmingham_on_I65: 3.40 hours travelled (Preference:0.026696777343750002) (Theme: None); 2.0 hours at location
+14. HuntsvilleAL to GadsenAL, HuntsvilleAL_tofrom_GadsenAL: 2.40 hours travelled (Preference:0.8) (Theme: Party); 8.0 hours at location
+15. GadsenAL to AtlantaGA, GadsenAL_tofrom_AtlantaGA: 3.93 hours travelled (Preference:0.6000000000000001) (Theme: Party); 8.0 hours at location
+Start: AtlantaGA 
+Total Preference: 11.100 
+Miles Driven: 1821.0 
+Hours Driven: 60.700
+
+solutionLabel  Start:AtlantaGA  Hours:1000.0  MPH:30.0
+1. AtlantaGA to AthensGA, Atlanta_tofrom_Athens_on_I85N: 2.43 hours travelled (Preference:0.9) (Theme: Family); 9.0 hours at location
+2. AthensGA to ColumbiaSC, Athens_tofrom_Columbia: 5.47 hours travelled (Preference:1.0) (Theme: Fun); 10.0 hours at location
+3. ColumbiaSC to AshevilleNC, AshevilleNC_tofrom_ColumbiaSC_on_I26: 5.27 hours travelled (Preference:0.2) (Theme: None); 2.0 hours at location
+4. AshevilleNC to CharlotteNC, AshevilleNC_tofrom_CharlotteNC_on_I26_and_US74: 4.20 hours travelled (Preference:0.675) (Theme: Family); 6.75 hours at location
+5. CharlotteNC to BooneNC, BooneNC_tofrom_CharlotteNC_on_US321: 3.37 hours travelled (Preference:0.15000000000000002) (Theme: None); 1.5000000000000002 hours at location
+6. BooneNC to KnoxvilleTN, BooneNC_tofrom_KnoxvilleTN_on_I81: 5.37 hours travelled (Preference:0.1125) (Theme: None); 1.125 hours at location
+7. KnoxvilleTN to AthensTN, Knoxville_tofrom_Athens: 1.93 hours travelled (Preference:0.75) (Theme: Fun); 7.5 hours at location
+8. AthensTN to NashvilleTN, Nashville_tofrom_Athens: 5.63 hours travelled (Preference:0.084375) (Theme: None); 0.84375 hours at location
+9. NashvilleTN to JacksonTN, Nashville_tofrom_Jackson_on_I40: 4.30 hours travelled (Preference:0.5625) (Theme: Fun); 5.625 hours at location
+10. JacksonTN to ClarksvilleTN, Clarksville_tofrom_JacksonTN: 4.13 hours travelled (Preference:0.06328125) (Theme: None); 0.6328125 hours at location
+11. ClarksvilleTN to HuntsvilleAL, Clarksville_tofrom_HuntsvilleAL: 5.47 hours travelled (Preference:0.0474609375) (Theme: None); 0.474609375 hours at location
+12. HuntsvilleAL to GadsenAL, HuntsvilleAL_tofrom_GadsenAL: 2.40 hours travelled (Preference:0.8) (Theme: Party); 8.0 hours at location
+13. GadsenAL to AtlantaGA, GadsenAL_tofrom_AtlantaGA: 3.93 hours travelled (Preference:0.6000000000000001) (Theme: Party); 6.000000000000001 hours at location
+Start: AtlantaGA 
+Total Preference: 10.700 
+Miles Driven: 1617.0 
+Hours Driven: 53.900
+

@@ -70,7 +70,7 @@ def format_output(path, locations, edges, total_preference, total_time):
         loc_preference = locations[locationB]['preference'] * (0.75 ** (visited_themes[loc_theme] - 1))
         loc_time = time_at_location(loc_preference)
         
-        line = f"{i + 1}. {locationA} to {locationB}, {edge_label}: {edge_time:.2f} hours travelled (Preference:{loc_preference}) (Theme: {loc_theme}); {loc_time} hours at location"
+        line = f"{i + 1}. {locationA} to {locationB}, {edge_label}: {edge_time:.2f} hours travelled (Preference:{loc_preference:.4f}) (Theme: {loc_theme}); {loc_time:.4f} hours at location"
         output_lines.append(line)
     
     output_lines.append(f"Start: {startLoc} \nTotal Preference: {total_preference:.3f} \nMiles Driven: {total_distance} \nHours Driven: {total_time:.3f}")
